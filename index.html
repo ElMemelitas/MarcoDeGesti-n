@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h3 class="text-center fw-light display-3">Marco de Gestión de Seguridad de la Información</h3>
+
+        <!-- Mini Navbar -->
+        <div class="mini-navbar">
+            <button class="active" onclick="showSection('section1', this)">Marco de Gestión</button>
+            <button onclick="showSection('section2', this)">Seguridad Informática</button>
+            <button onclick="showSection('section3', this)">Desarrollo de políticas</button>
+            <button onclick="showSection('section4', this)">Marco de Gestión</button>
+        </div>
+
+        <!-- Línea debajo de la navbar -->
+        <div class="navbar-line"></div>
+
+        <!-- Secciones de contenido dinámico -->
+        <div id="section1" class="content-section">
+            <h4 class="display-4">Marco de Gestión de Seguridad de la Información</h4>
+            <p class="texto">
+                El “Acuerdo por el que se emiten las políticas y disposiciones para impulsar el uso y aprovechamiento de la informática, el gobierno digital, las tecnologías de la información y comunicación, y la seguridad de la información en la Administración Pública Federal”, publicado el 9 de septiembre de 2021, por la Coordinación de la Estrategia Digital de la Presidencia de la República:
+            </p>
+            
+            <p class="texto">
+                Establece como directriz que las Instituciones de la Administración Pública Federal deberán contar con un Marco de Gestión de Seguridad de la Información (MGSI), alineado a la política general de Seguridad de la Información, que cada Institución establezca de conformidad con sus objetivos y dimensionamiento.
+            </p>
+            
+            <p class="texto">
+                ACUERDO por el que se emiten las políticas y disposiciones para impulsar el uso y aprovechamiento de la informática, el gobierno digital, las tecnologías de la información y comunicación, y la seguridad de la información en la Administración Pública Federal.
+            </p>
+            
+            <div class="columns">
+                <div class="row img-column">
+                    <img src="gato.jpg" alt="Descripción de la imagen" class="img-left">
+                </div>
+                <div class="row text-column">
+                    <p class="texto">
+                        Aquí va el texto que quieres mostrar al lado derecho de la imagen. Puedes agregar más contenido según sea necesario.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+        <div id="section2" class="content-section" style="display: none;">
+            <h4 class="display-4">La Seguridad Informática</h4>
+            <p class="texto">Este es un texto genérico para la sección 2.</p>
+        </div>
+        <div id="section3" class="content-section" style="display: none;">
+            <h4 class="display-4">Desarrollo de políticas y lineamientos de seguridad informática</h4>
+            <p class="texto">Este es un texto genérico para la sección 3.</p>
+        </div>
+        <div id="section4" class="content-section" style="display: none;">
+            <h4 class="display-4">Componentes del Marco de Gestión de Seguridad de la Información</h4>
+            <p class="texto">Este es un texto genérico para la sección 4.</p>
+        </div>
+    </div>
+
+    <script>
+        function showSection(sectionId, button) {
+            // Ocultar todas las secciones
+            let sections = document.querySelectorAll(".content-section");
+            sections.forEach(section => section.style.display = "none");
+
+            // Mostrar la sección seleccionada
+            document.getElementById(sectionId).style.display = "block";
+
+            // Remover la clase "active" de todos los botones
+            let buttons = document.querySelectorAll(".mini-navbar button");
+            buttons.forEach(btn => btn.classList.remove("active"));
+
+            // Agregar la clase "active" al botón clickeado
+            button.classList.add("active");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+.container {
+    padding: 15px;
+    text-align: center;
+}
+
+.display-3 {
+    font-size: calc(1.525rem + 3.3vw);
+    font-weight: 300;
+    line-height: 1.2;
+    color: #666699;
+    font-family: 'Red Hat Display', sans-serif;
+}
+
+.display-4 {
+    font-size: calc(1.2rem + 1vw); /* Ajusta el tamaño para que sea más pequeño */
+    font-weight: 50;
+    line-height: 1.2;
+    color: #666699;
+    font-family: 'Red Hat Display', sans-serif;
+    margin-top: 15px;
+}
+
+/* Mini Navbar */
+.mini-navbar {
+    display: flex;
+    margin: 0 60px; 
+}
+
+.mini-navbar button {
+    flex: 1; /* Hace que los botones ocupen el mismo espacio */
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 15px;
+    font-size: 20px; /* Aumenta el tamaño del texto */
+    font-weight: bold; /* Hace el texto en negritas */
+    cursor: pointer;
+    border-radius: 0; /* Hace que sean cuadrados */
+    transition: background 0.3s, color 0.3s;
+}
+
+/* Hover */
+.mini-navbar button:hover {
+    background-color: black;
+    color: white;
+}
+
+/* Botón activo (seleccionado) */
+.mini-navbar button.active {
+    background-color: black;
+    color: white;
+}
+
+/* Línea debajo de la navbar */
+.navbar-line {
+    margin: 0 60px; 
+    height: 3px;
+    background-color: black;
+    margin-top: 0;
+}
+
+/* Sección de contenido */
+.content-section {  
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+    color: #333;
+    padding: 10px;
+}
+
+.mini-navbar button.active {
+    background-color: black !important;
+    color: white !important;
+}
+
+.texto{
+    text-align: justify;
+    margin: 0 60px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.row {
+    display: grid;
+    grid-row: 2;
+}
+
+.column {
+    flex: 50%;
+    padding: 10px;
+}
+
+.img-column {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: auto;
+}
+
+.text-column {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+
