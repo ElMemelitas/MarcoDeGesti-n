@@ -5,6 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        /* Estilos para la ventana modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.4);
+            padding-top: 60px;
+            transition: opacity 0.5s ease;
+            opacity: 0;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            transition: transform 0.5s ease;
+            transform: scale(0.8);
+        }
+
+        .modal.show {
+            display: block;
+            opacity: 1;
+        }
+
+        .modal-content.show {
+            transform: scale(1);
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -38,7 +89,7 @@
             
             <div class="row">
                 <div class="column img-column-left">
-                    <img src="acuerdomg.jpg" alt="Descripción de la imagen" >
+                    <img src="acuerdomg.jpg" alt="Descripción de la imagen" style="cursor: default !important;">
                 </div>
                 <div class="column text-column">
                     <p class="texto">
@@ -73,65 +124,74 @@
             <div class="row">
                 <div class="column ">
                     <div class="img-column-left">
-                        <img src="a.png" alt="Descripción de la imagen" >
+                        <img src="a.png" alt="Descripción de la imagen" onclick="openModal('Título A', 'Texto descriptivo para la imagen A.')">
                     </div>
                     <div class="p-3"></div>
                     <div class="p-3"></div>
                     <div class="img-column-left">
-                        <img src="b.png" alt="Descripción de la imagen" >
+                        <img src="b.png" alt="Descripción de la imagen" onclick="openModal('Título B', 'Texto descriptivo para la imagen B.')">
                     </div>
                     <div class="p-3"></div>
                     <div class="p-3"></div>
                     <div class="img-column-left">
-                        <img src="c.png" alt="Descripción de la imagen" >
+                        <img src="c.png" alt="Descripción de la imagen" onclick="openModal('Título C', 'Texto descriptivo para la imagen C.')">
                     </div>
                     <div class="p-3"></div>
                     <div class="p-3"></div>
                     <div class="img-column-left">
-                        <img src="d.png" alt="Descripción de la imagen" >
+                        <img src="d.png" alt="Descripción de la imagen" onclick="openModal('Título D', 'Texto descriptivo para la imagen D.')">
                     </div>
                     <div class="p-3"></div>
                     <div class="p-3"></div>
                     <div class="img-column-left">
-                        <img src="e.png" alt="Descripción de la imagen" >
+                        <img src="e.png" alt="Descripción de la imagen" onclick="openModal('Título E', 'Texto descriptivo para la imagen E.')">
                     </div>
                     <div class="p-3"></div>
                     <div class="p-3"></div>
                 </div>
                 <div class="column ">
                     <div class="img-column-mid">
-                        <img src="marco11.png" alt="Descripción de la imagen" >
+                        <img src="marco11.png" alt="Descripción de la imagen" onclick="openModal('Título Marco', 'Texto descriptivo para la imagen Marco.')">
                     </div>
                 </div>
                 <div class="column ">
                     <div class="img-column-right">
-                        <img src="f.png" alt="Descripción de la imagen" >
+                        <img src="f.png" alt="Descripción de la imagen" onclick="openModal('Título F', 'Texto descriptivo para la imagen F.')">
                     </div>
                     <div class="p-3"></div>
                     <div class="p-3"></div>
                     <div class="img-column-right">
-                        <img src="g.png" alt="Descripción de la imagen" >
+                        <img src="g.png" alt="Descripción de la imagen" onclick="openModal('Título G', 'Texto descriptivo para la imagen G.')">
                     </div>
                     <div class="p-3"></div>
                     <div class="p-3"></div>
                     <div class="img-column-right">
-                        <img src="h.png" alt="Descripción de la imagen" >
+                        <img src="h.png" alt="Descripción de la imagen" onclick="openModal('Título H', 'Texto descriptivo para la imagen H.')">
                     </div>
                     <div class="p-3"></div>
                     <div class="p-3"></div>
                     <div class="img-column-right">
-                        <img src="i.png" alt="Descripción de la imagen" >
+                        <img src="i.png" alt="Descripción de la imagen" onclick="openModal('Título I', 'Texto descriptivo para la imagen I.')">
                     </div>
                     <div class="p-3"></div>
                     <div class="p-3"></div>
                     <div class="img-column-right">
-                        <img src="j.png" alt="Descripción de la imagen" >
+                        <img src="j.png" alt="Descripción de la imagen" onclick="openModal('Título J', 'Texto descriptivo para la imagen J.')">
                     </div>
                     <div class="p-3"></div>
                     <div class="p-3"></div>
                 </div>
             </div>
+        </div>
+    </div>
 
+    <!-- Ventana modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modalTitle"></h2>
+            
+            <p id="modalText"></p>
         </div>
     </div>
 
@@ -140,16 +200,44 @@
             // Ocultar todas las secciones
             let sections = document.querySelectorAll(".content-section");
             sections.forEach(section => section.style.display = "none");
-
+    
             // Mostrar la sección seleccionada
             document.getElementById(sectionId).style.display = "block";
-
+    
             // Remover la clase "active" de todos los botones
             let buttons = document.querySelectorAll(".mini-navbar button");
             buttons.forEach(btn => btn.classList.remove("active"));
-
+    
             // Agregar la clase "active" al botón clickeado
             button.classList.add("active");
+        }
+    
+        function openModal(title, text) {
+            document.getElementById("modalTitle").innerText = title;
+            document.getElementById("modalText").innerText = text;
+            let modal = document.getElementById("myModal");
+            let modalContent = document.querySelector(".modal-content");
+            modal.classList.add("show");
+            setTimeout(() => {
+                modalContent.classList.add("show");
+            }, 10); // Delay to ensure the transition is visible
+        }
+    
+        function closeModal() {
+            let modal = document.getElementById("myModal");
+            let modalContent = document.querySelector(".modal-content");
+            modalContent.classList.remove("show");
+            setTimeout(() => {
+                modal.classList.remove("show");
+            }, 500); // Match the transition duration
+        }
+    
+        // Cerrar la ventana modal al hacer clic fuera de ella
+        window.onclick = function(event) {
+            let modal = document.getElementById("myModal");
+            if (event.target == modal) {
+                closeModal();
+            }
         }
     </script>
 </body>
