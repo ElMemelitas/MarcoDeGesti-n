@@ -93,7 +93,7 @@
                 </div>
                 <div class="column text-column">
                     <p class="texto">
-                        Aquí va el texto que quieres mostrar al lado derecho de la imagen. Puedes agregar más contenido según sea necesario.
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident, odio enim optio quasi sed, dicta amet, quae labore obcaecati quis deleniti error numquam dolore pariatur. Ex odio nostrum maiores officiis!
                     </p>
                 </div>
             </div>
@@ -105,6 +105,36 @@
             <p class="texto">
                 El Instituto Politécnico Nacional, por medio de la Coordinación del Centro Nacional de Cálculo - ente rector de las tecnologías de la información y la seguridad informática en la institución – coordina los esfuerzos institucionales para coadyuvar en la implementación de las tareas del MGSI, abarcando todos los pasos del proceso, basándonos en las metodologías líderes a nivel mundial, recomendadas por la Coordinación de la Estrategia Digital Nacional de la Presidencia de la República.
             </p>
+
+            <div class="div-links">
+                <div class="row">
+                    <div class="column">
+                        <div>
+                            <img src="c-objetivos.jpg" alt="">
+                        </div>
+                    </div>
+
+                    <div class="column">
+                        <div>
+                            <img src="c-politica.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="column">
+                        <div>
+                            <img src="c-protocolo.jpg" alt="">
+                        </div>
+                    </div>
+
+                    <div class="column">
+                        <div>
+                            <img src="c-formacion.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         </div>
 
@@ -151,32 +181,32 @@
                 </div>
                 <div class="column ">
                     <div class="img-column-mid">
-                        <img src="marco11.png" alt="Descripción de la imagen" onclick="openModal('Título Marco', 'Texto descriptivo para la imagen Marco.')">
+                        <img src="marco11.png" alt="Descripción de la imagen" onclick="openModal('Título Marco', '<p>Texto descriptivo para la imagen Marco con <br> <strong>formato</strong>.</p>')">
                     </div>
                 </div>
                 <div class="column ">
                     <div class="img-column-right">
-                        <img src="f.png" alt="Descripción de la imagen" onclick="openModal('Título F', 'Texto descriptivo para la imagen F.')">
+                        <img src="f.png" alt="Descripción de la imagen" onclick="openModal('Título F', '<p>Texto descriptivo para la imagen F con <strong>formato</strong>.</p>')">
                     </div>
                     <div class="p-3"></div>
                     <div class="p-3"></div>
                     <div class="img-column-right">
-                        <img src="g.png" alt="Descripción de la imagen" onclick="openModal('Título G', 'Texto descriptivo para la imagen G.')">
+                        <img src="g.png" alt="Descripción de la imagen" onclick="openModal('Título G', '<p>Texto descriptivo para la imagen G con <em>formato</em>.</p>')">
                     </div>
                     <div class="p-3"></div>
                     <div class="p-3"></div>
                     <div class="img-column-right">
-                        <img src="h.png" alt="Descripción de la imagen" onclick="openModal('Título H', 'Texto descriptivo para la imagen H.')">
+                        <img src="h.png" alt="Descripción de la imagen" onclick="openModal('Título H', '<p>Texto descriptivo para la imagen H con <u>formato</u>.</p>')">
                     </div>
                     <div class="p-3"></div>
                     <div class="p-3"></div>
                     <div class="img-column-right">
-                        <img src="i.png" alt="Descripción de la imagen" onclick="openModal('Título I', 'Texto descriptivo para la imagen I.')">
+                        <img src="i.png" alt="Descripción de la imagen" onclick="openModal('Título I', '<p>Texto descriptivo para la imagen I con <strong>formato</strong>.</p>')">
                     </div>
                     <div class="p-3"></div>
                     <div class="p-3"></div>
                     <div class="img-column-right">
-                        <img src="j.png" alt="Descripción de la imagen" onclick="openModal('Título J', 'Texto descriptivo para la imagen J.')">
+                        <img src="j.png" alt="Descripción de la imagen" onclick="openModal('Título J', '<p>Texto descriptivo para la imagen J con <em>formato</em>.</p>')">
                     </div>
                     <div class="p-3"></div>
                     <div class="p-3"></div>
@@ -188,10 +218,13 @@
     <!-- Ventana modal -->
     <div id="myModal" class="modal">
         <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <h2 id="modalTitle"></h2>
-            
-            <p id="modalText"></p>
+            <div class="modal-header">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2 id="modalTitle"></h2>
+            </div>
+            <div class="modal-body">
+                <p id="modalText"></p>
+            </div>
         </div>
     </div>
 
@@ -212,9 +245,9 @@
             button.classList.add("active");
         }
     
-        function openModal(title, text) {
+        function openModal(title, htmlContent) {
             document.getElementById("modalTitle").innerText = title;
-            document.getElementById("modalText").innerText = text;
+            document.getElementById("modalText").innerHTML = htmlContent;
             let modal = document.getElementById("myModal");
             let modalContent = document.querySelector(".modal-content");
             modal.classList.add("show");
