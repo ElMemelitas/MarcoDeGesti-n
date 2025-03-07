@@ -5,57 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
-    <style>
-        /* Estilos para la ventana modal */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgb(0,0,0);
-            background-color: rgba(0,0,0,0.4);
-            padding-top: 60px;
-            transition: opacity 0.5s ease;
-            opacity: 0;
-        }
-
-        .modal-content {
-            background-color: #fefefe;
-            margin: 5% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
-            transition: transform 0.5s ease;
-            transform: scale(0.8);
-        }
-
-        .modal.show {
-            display: block;
-            opacity: 1;
-        }
-
-        .modal-content.show {
-            transform: scale(1);
-        }
-
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }
-    </style>
+    
 </head>
 <body>
     <div class="container">
@@ -140,12 +90,42 @@
 
         <div id="section2" class="content-section" style="display: none;">
             <h4 class="display-4">La Seguridad Informática</h4>
-            <p class="texto">Este es un texto genérico para la sección 2.</p>
+
+            <p class="texto">
+                La seguridad informática es un tema que cada vez cobra más relevancia en el ámbito académico, debido a los riesgos y amenazas que existen en el entorno digital, tales como ataques cibernéticos, robo de información, suplantación de identidad, entre otros. Por ello, es necesario contar con un marco normativo y una estrategia que oriente y regule el uso adecuado de los recursos tecnológicos, así como la protección de los datos personales y la información confidencial que se genera y se almacena en los sistemas informáticos del IPN.
+            </p>
+
+            <p class="texto">
+                El IPN por medio de la Coordinación General del Centro Nacional de Cálculo, se ha encargado de implementar y administrar los mecanismos para la protección de los sistemas y las tecnologías de información de la institución. Sin embargo, el CENAC y sus direcciones operativas, la Dirección de Cómputo y Comunicaciones y la Dirección de Sistemas Informáticos, no pueden actuar aisladamente, ya que requieren de la colaboración y el compromiso de toda la comunidad politécnica: desde las autoridades, las unidades de informática en todas las Escuelas, Centros y Unidades, así como los estudiantes, docentes y el personal administrativo.
+            </p>
+
+            <p class="texto">
+                El Instituto Politécnico Nacional, ha desarrollado sus propias políticas y lineamientos de seguridad informática y de comunicaciones, a partir de las recomendaciones de la Coordinación de la Estrategia Digital Nacional de la Presidencia de la República, adaptadas a su contexto y necesidades específicas. Estas políticas son directrices que promueven el buen uso y cuidado de los recursos de tecnologías de información entre el personal directivo, administrativo, docente, estudiantes y terceros; mediante la notificación de las medidas y formas que deben cumplir y utilizar para proteger los componentes de los sistemas informáticos del IPN.
+            </p>
+
+            <p class="texto">
+                La implementación de estas políticas y controles mínimos de seguridad informática ha implicado un proceso de sensibilización, capacitación, supervisión y evaluación constante por parte del Centro Nacional de Cálculo plasmado en el “Programa de formación de cultura institucional de seguridad informática”. Es imprescindible el apoyo y la participación activa de todos los usuarios de los sistemas informáticos del IPN, quienes deben cumplir con las normas establecidas y reportar cualquier incidente o anomalía cibernética que detecten.
+            </p>
+
         </div>
 
         <div id="section3" class="content-section" style="display: none;">
             <h4 class="display-4">Desarrollo de políticas y lineamientos de seguridad informática</h4>
-            <p class="texto">Este es un texto genérico para la sección 3.</p>
+
+            <p class="texto">
+                El Instituto Politécnico Nacional, ha desarrollado sus propias políticas y lineamientos de seguridad informática y de comunicaciones, a partir de las recomendaciones de la Coordinación de la Estrategia Digital Nacional de la Presidencia de la República, adaptadas a su contexto y necesidades específicas. Estas políticas son directrices que promueven el buen uso y cuidado de los recursos de tecnologías de información entre el personal directivo, administrativo, docente, estudiantes y terceros; mediante la notificación de las medidas y formas que deben cumplir y utilizar para proteger los componentes de los sistemas informáticos del IPN.
+            </p>
+
+            <p class="texto">
+                La implementación de estas políticas y controles mínimos de seguridad informática ha implicado un proceso de sensibilización, capacitación, supervisión y evaluación constante por parte del Centro Nacional de Cálculo plasmado en el “Programa de formación de cultura institucional de seguridad informática”. Es imprescindible el apoyo y la participación activa de todos los usuarios de los sistemas informáticos del IPN, quienes deben cumplir con las normas establecidas y reportar cualquier incidente o anomalía cibernética que detecten.
+            </p>
+
+            <div class="row">
+                <div class="column">
+                    <img src="acuerdo.jpg" alt="">
+                </div>
+            </div>
+
         </div>
 
         <div id="section4" class="content-section" style="display: none;">
@@ -262,7 +242,7 @@
             modalContent.classList.remove("show");
             setTimeout(() => {
                 modal.classList.remove("show");
-            }, 500); // Match the transition duration
+            }, 300); // Match the transition duration
         }
     
         // Cerrar la ventana modal al hacer clic fuera de ella
